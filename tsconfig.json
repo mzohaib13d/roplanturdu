@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/components/NavBar.js", "app/components/HeroSection.js"  ],
+, "app/components/Navbar.js", "app/components/HeroSection.js"  ],
   "exclude": ["node_modules"]
 }

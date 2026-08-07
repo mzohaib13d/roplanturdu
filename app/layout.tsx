@@ -1,3 +1,5 @@
+import React, { ReactNode } from "react";
+import type { Metadata } from "next";
 import { Noto_Nastaliq_Urdu, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -13,15 +15,26 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
 });
 
-export const metadata = {
-  title: "Zohaib Farooq | آر او پلانٹ \ RO Plant Urdu",
+export const metadata: Metadata = {
+  title: "Zohaib Farooq | آر او پلانٹ \\ RO Plant Urdu",
   description: "آر او پلانٹ کی مکمل انسٹالیشن، آپریشن اور ٹربل شوٹنگ گائیڈ",
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="ur" dir="rtl" className={`${nastaliq.variable} ${jakarta.variable}`}>
-      <body className="font-urdu min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-cyan-200 selection:text-cyan-900" suppressHydrationWarning>
+    <html
+      lang="ur"
+      dir="rtl"
+      className={`${nastaliq.variable} ${jakarta.variable}`}
+    >
+      <body
+        className="font-urdu min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-cyan-200 selection:text-cyan-900"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
